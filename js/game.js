@@ -70,6 +70,13 @@ function init() {
     powerup: new Audio('sounds/powerup.wav'),
     stomp: new Audio('sounds/stomp.wav')
   };
+  if (true) {
+    [music, sounds].forEach(audios => {
+      Object.keys(audios).forEach(key => {
+        audios[key].muted = true;
+      });
+    });
+  }
   Mario.oneone();
   lastTime = Date.now();
   main();
@@ -183,6 +190,7 @@ function checkCollisions() {
 
 //draw the game!
 function render() {
+  // TODO Other.
   updateables = [];
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.fillStyle = level.background;
