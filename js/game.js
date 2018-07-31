@@ -22,6 +22,8 @@ var vX = 0,
     vWidth = 256,
     vHeight = 240;
 
+var inside;
+
 //load our images
 resources.load([
   'sprites/player.png',
@@ -51,6 +53,11 @@ function init() {
   canvas.width = 762;
   canvas.height = 720;
   ctx.scale(3,3);
+  // Prep inside.
+  inside = new Inside({
+    canvas: document.getElementById('inside'),
+    reference: canvas,
+  });
   // Prep the audio.
   music = {
     overworld: new Audio('sounds/aboveground_bgm.ogg'),
@@ -93,6 +100,7 @@ function main() {
 
   update(dt);
   render();
+  inside.render({level, player});
 
   lastTime = now;
   requestAnimFrame(main);
