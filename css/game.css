@@ -5,10 +5,13 @@ html, body, ul, li {
 }
 
 canvas {
-  display: block;
-  width: 762;
-  margin: 0 auto;
   background-color: blue;
+  margin: 0 2em;
+  width: 762px;
+}
+
+#views {
+  text-align: center;
 }
 
 p {
@@ -23,10 +26,4 @@ body {
 html {
   overflow: hidden;
   height: 100%;
-}
-
-.info {
-  position: absolute;
-  top: 0;
-  left: 0;
 }
